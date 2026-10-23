@@ -43,29 +43,36 @@ No dependencies. Copy and go.
 
 Two steps, one checkpoint.
 
-**Step 1 · Tension → scenes.** Read the full text, extract the core tension, then emit three absurd-object scenes as one line each:
+**Step 1 · Tension → decoupled 3×3 menu board.** Read the full text, extract the core tension, and decouple **scene narrative, lens geometry, and color formula** into a **3×3 menu board** (with each category highlighting a `★ Recommended` pick):
+1. **Visual tension (A / B / C)**: suspended disaster / absurd labor / chic dissonance (structured as `<absurd prop> + <facial expression> + <tension metaphor>`)
+2. **Lens geometry (① / ② / ③)**: three contrasting lenses selected from the 6 physical optics profiles
+3. **Color formula (Ⅰ / Ⅱ / Ⅲ)**: three distinct colorways drawn from the Top 8 solid sweeps and 5 clash formulas
 
-```
-<absurd prop> — <tension metaphor> — <facial expression> — <preset: formula # or solid # / lens # / aspect>
-```
+The single 🔴 CHECKPOINT in between:
+- **Express path**: Reply "default" or "ok" to compile directly with the three `★ Recommended` choices;
+- **Custom remix**: Reply with a 3-character code (e.g., `B2Ⅱ`) or specify target aspect ratio (`2.35:1` / `16:9` / `3:4` / `1:1`).
 
-The three scenes take three distinct dramatic routes — suspended disaster, absurd labor, chic dissonance — and must not reuse a background color. The palette gets exercised during ideation, not after.
+**Step 2 · Compilation & deterministic self-correction gates.** Assemble the prompt along the five-layer skeleton (identity locking → lens geometry → prop deformation → specular material → lighting & clean backdrop invariant).
+Before delivery, the prompt must pass **three deterministic self-correction gates**:
+- **Limb boundary lock**: Explicitly declare crop boundaries or single-limb status for any partial anatomy to prevent models from generating extra deformed limbs;
+- **Material-subject decoupling**: Adverbs and high-gloss textures stay strictly adjacent to target props, preventing global bleeding onto seamless paper sweeps;
+- **Positive-only assertion**: Zero `no / without / avoid` exclusion phrases; all cleanliness requirements are unified into the positive seamless paper invariant.
 
-**Step 2 · Compile and deliver.** Five-layer assembly into one paragraph: lens and geometry → prop and physical deformation → material and specular → lighting and negative space. Deliver the prompt, three decisive optical mechanisms, a one-line test prompt, and downstream safe-area guidance.
-
-The single 🔴 CHECKPOINT sits between the two steps.
+Final delivery includes four items: full English prompt, three decisive optical mechanisms, one-line test prompt, and downstream safe-area guidelines.
 
 ## Example
 
 Theme: "the to-do list never ends."
 
-| | Scene | Preset |
-| :--- | :--- | :--- |
-| A | A to-do tower built from lemon jelly tips over, blank paper slips suspended inside | Formula 2 (`#FDCF00` + `#E4471D`) \| Lens 4 \| 3:4 |
-| B | A chef stitches a single cherry tomato with surgical tweezers | Solid `#DCF0F6` \| Lens 2 \| 1:1 |
-| C | A mint-green resin pill larger than the marble tray it rests on | Formula 5 (`#020202` + lit pale subject) \| Lens 3 \| 2.35:1 |
+**Step 1 Generated 3×3 Menu Board**:
 
-Compiled from B:
+| Column | Option 1 | Option 2 | Option 3 |
+| :--- | :--- | :--- | :--- |
+| **Visual Tension** | **A. Suspended Disaster (★ Recommended)**<br>A to-do tower built from lemon jelly tips over, blank paper slips suspended inside (campy shock) | **B. Absurd Labor**<br>A chef stitches a single 1cm cherry tomato with surgical tweezers (deadpan) | **C. Chic Dissonance**<br>A mint-green resin pill larger than the marble tray it rests on (manic smile) |
+| **Lens Profile** | **① 24mm Wide-Angle Micro-Distortion (★ Recommended)**<br>25cm distance, subtle barrel bulging to break personal space | **② 100mm 1:1 Macro Compression**<br>4cm distance, physical compression pressed against frame border | **③ 90° Overhead Flat-Lay**<br>Surgical geometric order and cold judgment |
+| **Color Formula** | **Ⅰ. Formula 2 Warm Hard Clash (★ Recommended)**<br>Solar yellow `#FDCF00` against tomato red `#E4471D` | **Ⅱ. Solid Ice Cyan**<br>Classic `#DCF0F6` ice cyan paper sweep | **Ⅲ. Formula 5 Luminance Drop**<br>Solid black `#020202` with lit pale subject |
+
+Selecting **`B2Ⅱ`** (Absurd Labor + Macro Compression + Ice Cyan Sweep) compiles into:
 
 ```text
 extreme macro lens perspective focused at ultra-close 4cm distance, physical compression
