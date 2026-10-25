@@ -29,7 +29,7 @@ description: 生成 TOILETPAPER（厕纸风格）生图提示词：高反差纯�
 > **🔴 CHECKPOINT · STOP**
 > 若环境支持 `ask_question` 交互弹窗，直接调用弹窗展示这 3 道单选（把 `★ 推荐` 项排在首位）；若为纯文本回复，在末尾提示：
 > - **懒人直通**：回「默认」或「好」，直接按三栏的 `★ 推荐` 组合（及默认画幅）编译；
-> - **自由混搭**：回三位代号（如 `B1Ⅱ`）或直接指定画幅（`2.35:1` / `16:9` / `3:4` / `1:1`）。
+> - **自由混搭**：回三位代号（如 `B1Ⅱ`）或直接指定画幅（`2.35:1` / `16:9` / `3:4` / `1:1`，以及是否需要排版留白，默认不强加单侧压字留白）。
 
 **完成判据**：三栏解耦呈现、每栏 3 个候选互不雷同、均标明 `★ 推荐` 项，且停在 Checkpoint 等待用户拍板后才进入 Step 2。
 
@@ -40,8 +40,8 @@ description: 生成 TOILETPAPER（厕纸风格）生图提示词：高反差纯�
 1. **身份锁定**（仅垫图时）：`keep face, features, skin tone, hairstyle unchanged, no identity drift`
 2. **镜头与空间几何**：该镜头的 Prompt 片段原文，逐字取用。
 3. **道具与受力形变**：荒谬实体互动、接触面受压形变、指尖压力凹陷、波普糖果化材质。
-4. **材质与高光**：从材质词典取 1~2 种。
-5. **打光与留白**：裸灯直闪视觉目标 + 刀刻般接触硬阴影 + 第二节纯净背景恒量 + 第三节该画幅的追加留白词。
+4. **材质与高光**：从材质词典取 1~2 种（严格采用纯正向描述，严禁引入原片段中的负向词）。
+5. **打光与构图模式**：裸灯直闪视觉目标 + 刀刻般接触硬阴影 + 第二节纯净背景恒量 + 第三节对应画幅的构图词（区分**「原刊饱满模式（无留白）」**与**「下游排版留白模式」**）。
 
 **自筛前置闸门（防畸变与模型混淆）**：在拼接完成后、交付之前，必须内部通过 3 项确定性自筛。不合格立即就地重写：
 - **肢体边界锁闭**：画面出现手足或人体局部时，必须显式声明裁切边界或单肢状态（如 `the ankle cropped by the frame edge` 或 `one single hand`），阻断生图模型补画多余肢体。
@@ -69,14 +69,16 @@ completely blank featureless seamless paper sweep in one flat solid saturated co
 
 旧版用负向句（"没有 X""不得出现 X"）描述留白，已废止：现代模型（FLUX、GPT Image、NanoBanana 2.x、Imagen）以 LLM/T5 理解语义，负向词会把被排除的视觉特征一并激活。
 
-## 三、画幅与留白
+## 三、画幅与构图模式（饱满原刊 vs 排版留白）
 
-| 渠道 | 比例 | 构图重心 | 追加留白词 |
-| :--- | :---: | :--- | :--- |
-| 博客头图 / 插图 | `16:9` | 主体偏左或偏右，单侧留 40% | `wide 16:9 horizontal framing, subject comfortably off-center, 40% of the frame left as clean solid backdrop` |
-| 公众号横版 Banner | `2.35:1` | 宽幅横向展开，左右留呼吸空间 | `cinematic ultra-wide 2.35:1 banner framing, horizontal linear composition, ample breathing room at both sides` |
-| 小红书图文海报 | `3:4` | 竖向张力，主体居中或偏下，顶部留 35% | `vertical 3:4 portrait framing, subject centered or low, top 35% reserved as clean solid backdrop` |
-| 方形 / 头像 | `1:1` | 中心波普构图，四周均匀负空间 | `square 1:1 framing, bold centered pop composition, uniform negative space all around` |
+根据是否需要下游压字，画幅构图分为两档：**「原刊饱满模式（不留白，贴合原片主体占 60%–80% 的波普视觉冲击）」**与**「排版留白模式（预留 35%–40% 负空间供下游压字）」**：
+
+| 画幅比例 | 模式 A：原刊饱满模式（无压字留白，纯视觉冲击） | 模式 B：下游排版留白模式（供封面/海报压字） |
+| :---: | :--- | :--- |
+| `3:4` | `vertical 3:4 portrait framing, bold full-frame pop composition, subject tightly filling the central 80% of the canvas with balanced studio backdrop edge` | `vertical 3:4 portrait framing, subject centered or low, top 35% reserved as clean solid backdrop` |
+| `16:9` | `wide 16:9 horizontal framing, bold centered pop composition filling the frame with tight dramatic crop` | `wide 16:9 horizontal framing, subject comfortably off-center, 40% of the frame left as clean solid backdrop` |
+| `2.35:1` | `cinematic ultra-wide 2.35:1 framing, close-cropped horizontal pop tension filling the widescreen canvas` | `cinematic ultra-wide 2.35:1 banner framing, horizontal linear composition, ample breathing room at both sides` |
+| `1:1` | `square 1:1 framing, bold full-frame centered pop composition dominating the canvas` | `square 1:1 framing, bold centered pop composition, uniform negative space all around` |
 
 ## 四、镜头速查
 

@@ -136,7 +136,7 @@
 | 材质分类 | 物理光学特性 | Prompt 专业英文片段 |
 | :--- | :--- | :--- |
 | **甘油 / 人造汗珠**<br>(Glycerin Droplets) | 极高折射率（$n \approx 1.47$），微小半球状高表面张力水珠，微距下折射倒立微缩高光 | `microscopic glycerin droplets resting on surface, high surface tension, pinpoint specular refraction under direct strobe, crystal-clear bead highlights` |
-| **乳胶 / 抛光橡胶**<br>(Latex & Silicone) | 表面致密拉伸，高镜面反光带紧随受压形变，深色部分陡峭落入暗调，无粗糙漫反射 | `high-gloss polished latex, tight specular sheen highlights tracking physical stretch wrinkles, deep sharp shadow crevices without diffuse blur` |
+| **乳胶 / 抛光橡胶**<br>(Latex & Silicone) | 表面致密拉伸，高镜面反光带紧随受压形变，深色部分陡峭落入暗调，纯粹镜面过渡 | `high-gloss polished latex, tight specular sheen highlights tracking physical stretch wrinkles, deep razor-sharp shadow crevices with crisp tonal drop-off` |
 | **抛光亚克力 / 注塑塑料**<br>(Polished Acrylic & Plastic) | 工业注塑镜面反射，纯净无微观划痕，边缘带有锐利注塑模线高光反光 | `high-gloss injection-molded acrylic, pristine mirror-like specular reflections, razor-sharp edge glints under bare-bulb studio flash` |
 | **瓷釉 / 烤漆**<br>(Porcelain Enamel & Lacquer) | 陶瓷级冰冷硬质反光，完全平整光滑，对点光源呈现极强烈的白色光斑 | `cold porcelain enamel glaze, mirror-smooth reflective finish, pure white direct flash glare hotspot with zero haze` |
 | **透明树脂 / 糖果果冻**<br>(Translucent Resin & Jelly) | 纯净次表面透光，悬浮微小气泡形成多焦点微观聚光，晶莹剔透人造物 | `translucent hyper-saturated jelly resin, internal suspended micro air bubbles catching direct strobe flashes, glassy prism reflections` |
